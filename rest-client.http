@@ -6,7 +6,7 @@ GET http://localhost:3000/songs
 
 ### Find Songs Request
 
-GET http://localhost:3000/songs/abc
+GET http://localhost:3000/songs/1
 
 ### Create New Song Request
 
