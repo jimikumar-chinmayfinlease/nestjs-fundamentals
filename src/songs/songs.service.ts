@@ -1,24 +1,28 @@
 import { Injectable, Scope } from '@nestjs/common';
+import { Repository } from 'typeorm';
+import { Song } from './song.entity';
+import { CreateSongDTO } from './dto/create-song-dto';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable({
   scope: Scope.TRANSIENT,
 })
 export class SongsService {
-  // local db
-  // local array
+  constructor(
+    @InjectRepository(Song)
+    private songRepository: Repository<Song>,
+  ) {}
 
-  private readonly songs = [];
+  create(songDTO: CreateSongDTO): Promise<Song> {
+    const song = new Song();
+    song.title = songDTO.title;
+    // song.artists = songDTO.artists;
+    song.duration = songDTO.duration;
+    song.lyrics = songDTO.lyrics;
+    song.releasedDate = songDTO.releasedDate;
 
-  create(song) {
-    // save the song in the database
-    this.songs.push(song);
-    return this.songs;
+    return this.songRepository.save(song);
   }
 
-  findAll() {
-    // fetch the songs from the database
-    // Errors comes while fetching the data from DB
-    // throw new Error('Error in Db while fetching record.');
-    return this.songs;
-  }
+  findAll() {}
 }

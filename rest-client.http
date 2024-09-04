@@ -17,7 +17,8 @@ Content-Type: application/json
     "title": "lasting lover",
     "artists": ["sigla","John","Martin"],
     "releasedDate": "2022-09-29",
-    "duration":"02:34"
+    "duration":"02:34",
+    "lyrics":"ewrw ,wer, ewr, s,fd s,df ,sdadsads"
 }
 
 ### Update Songs Request
@@ -39,3 +40,4 @@ Content-Type: application/json
     "songs":[1],
     "user":1
 }
+
