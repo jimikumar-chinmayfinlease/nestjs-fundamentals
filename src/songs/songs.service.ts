@@ -24,5 +24,7 @@ export class SongsService {
     return this.songRepository.save(song);
   }
 
-  findAll() {}
+  findAll(): Promise<Song[]> {
+    return this.songRepository.find();
+  }
 }
