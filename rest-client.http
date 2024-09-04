@@ -23,7 +23,15 @@ Content-Type: application/json
 
 ### Update Songs Request
 
-PUT http://localhost:3000/songs/1
+PUT http://localhost:3000/songs/4
+Content-Type: application/json
+
+{
+    "title":"Animals",
+    "releasedDate":"2022-09-29",
+    "duration":"03:43",
+    "lyrics":"Animal, wqeqw, safdsad qwe s ce dw e wqe wq"
+}
 
 ### Update Songs Request
 
