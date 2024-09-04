@@ -56,9 +56,9 @@ export class SongsController {
       'id',
       new ParseIntPipe({ errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE }),
     )
-    id: Number,
-  ) {
-    return `Fetch song on the base of id ${typeof id}`;
+    id: number,
+  ): Promise<Song> {
+    return this.songsService.findOne(id);
   }
 
   @Put(':id')
