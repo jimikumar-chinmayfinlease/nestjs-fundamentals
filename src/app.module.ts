@@ -16,6 +16,7 @@ import { Artist } from './artists/artist.entity';
 import { User } from './users/user.entity';
 import { Playlist } from './playlists/playlist.entity';
 import { PlaylistModule } from './playlists/playlist.module';
+import { DataSource } from 'typeorm';
 
 const devConfig = { port: 3000 };
 const proConfig = { port: 400 };
@@ -51,6 +52,9 @@ const proConfig = { port: 400 };
   ],
 })
 export class AppModule implements NestModule {
+  constructor(private dataSource: DataSource) {
+    console.log('dbName', dataSource.driver.database);
+  }
   configure(consumer: MiddlewareConsumer) {
     // consumer.apply(LoggerMiddleware).forRoutes('songs'); // option 1
     // consumer.apply(LoggerMiddleware).forRoutes({
