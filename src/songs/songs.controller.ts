@@ -16,6 +16,7 @@ import { SongsService } from './songs.service';
 import { CreateSongDTO } from './dto/create-song-dto';
 import { Connection } from 'src/common/constants/connection';
 import { Song } from './song.entity';
+import { DeleteResult } from 'typeorm';
 
 @Controller({ path: 'songs', scope: Scope.REQUEST })
 export class SongsController {
@@ -67,7 +68,7 @@ export class SongsController {
   }
 
   @Delete(':id')
-  delete() {
-    return 'Delete song on the base of id.';
+  delete(@Param('id', ParseIntPipe) id: number): Promise<DeleteResult> {
+    return this.songsService.remove(id);
   }
 }
