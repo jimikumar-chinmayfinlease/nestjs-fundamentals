@@ -29,3 +29,13 @@ PUT http://localhost:3000/songs/1
 DELETE http://localhost:3000/songs/1
 
 
+### Create a new Playlist
+
+POST http://localhost:3000/playlists
+Content-Type: application/json
+
+{
+    "name":"Feel Good Now",
+    "songs":[1],
+    "user":1
+}
