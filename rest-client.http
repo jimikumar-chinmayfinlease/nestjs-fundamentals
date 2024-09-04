@@ -6,7 +6,7 @@ GET http://localhost:3000/songs
 
 ### Find Songs Request
 
-GET http://localhost:3000/songs/1
+GET http://localhost:3000/songs/abc
 
 ### Create New Song Request
 
@@ -15,7 +15,7 @@ Content-Type: application/json
 
 {
     "title": "lasting lover",
-    "artists": ["sigla"],
+    "artists": ["sigla","John","Martin"],
     "releasedDate": "2022-09-29",
     "duration":"02:34"
 }
