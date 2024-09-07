@@ -17,6 +17,8 @@ import { User } from './users/user.entity';
 import { Playlist } from './playlists/playlist.entity';
 import { PlaylistModule } from './playlists/playlist.module';
 import { DataSource } from 'typeorm';
+import {  AdminController } from './admin.controller';
+import { UsersController } from './users.controller';
 
 const devConfig = { port: 3000 };
 const proConfig = { port: 400 };
@@ -36,7 +38,7 @@ const proConfig = { port: 400 };
     SongsModule,
     PlaylistModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, AdminController, UsersController],
   providers: [
     AppService,
     {
